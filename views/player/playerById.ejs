@@ -7,6 +7,7 @@
     <ul>
         <li>Username: <%= result[0].username %></li>
         <li>Status: <%= result[0].player_status ? "Online" : "Offline" %></li>
+        <li>In Game: <a href="/game/?dev_name=<%= result[0].Dev_Name + "&game_name=" + result[0].Game_Name %>"><%= result[0].Game_Name %></a></li>
     </ul>
 </div>
 

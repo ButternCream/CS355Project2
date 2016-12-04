@@ -13,7 +13,7 @@ exports.getAll = function(callback){
 };
 
 exports.getByName = function(server_ip, callback){
-    var query = 'SELECT * FROM game_server WHERE server_IP = ?';
+    var query = 'SELECT * FROM ServerInfo WHERE server_IP = ?';
     var queryData = [server_ip];
     connection.query(query, queryData, function(err ,result){
         callback(err , result);

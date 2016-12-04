@@ -13,7 +13,7 @@ exports.getAll = function(callback){
 };
 
 exports.getByName = function(player_id, callback){
-    var query = 'SELECT * FROM player WHERE player_ID = ?';
+    var query = 'SELECT * FROM PlayingGame WHERE player_ID = ?';
     var queryData = [player_id];
     connection.query(query, queryData, function(err ,result){
         callback(err , result);

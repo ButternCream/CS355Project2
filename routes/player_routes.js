@@ -17,6 +17,7 @@ router.get('/', function(req, res){
         res.send('player_id is null');
     }
     else {
+
         player_dal.getByName(req.query.player_id, function(err,result) {
             if (err) {
                 res.send(err);
