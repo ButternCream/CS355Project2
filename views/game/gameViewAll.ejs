@@ -1,0 +1,18 @@
+<%- include("../includes/header.ejs", {title: "Games"}); %>
+<%- include("../includes/style.ejs"); %>
+
+<div class="container">
+    <h1>Games</h1>
+
+    <table border="1">
+        <th>Dev Name</th><th>Game Name</th><th>Rating</th>
+        <% for(var i=0; result.length > i; i++ ) { %>
+        <tr>
+            <td><a href="/developer/?dev_name=<%= result[i].dev_name %>"><%= result[i].dev_name %></a></td>
+            <td><a href="/game/?dev_name=<%= result[i].dev_name + "&game_name=" + result[i].game_name %>"><%= result[i].game_name %></a></td>
+            <td><%= result[i].rating %></td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+<%- include("../includes/footer.ejs"); %>

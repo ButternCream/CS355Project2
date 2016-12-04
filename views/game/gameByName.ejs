@@ -1,0 +1,16 @@
+<%- include("../includes/header.ejs", {title: result[0].game_name}); %>
+<%- include("../includes/style.ejs"); %>
+
+<div class="container">
+    <h1><%= result[0].game_name %></h1>
+
+    <ul>
+        <li>Developer: <a href="/developer/?dev_name=<%= result[0].dev_name %>"><%= result[0].dev_name %></a></li>
+        <li>Game Type: <%= result[0].game_type %></li>
+        <li>Number of Players: <%= result[0].num_players %></li>
+        <li>Version: <%= result[0].version %></li>
+        <li>Rating: <%= result[0].rating %></li>
+    </ul>
+</div>
+
+<%- include("../includes/footer.ejs"); %>

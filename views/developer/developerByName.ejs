@@ -1,0 +1,14 @@
+<%- include("../includes/header.ejs", {title: result[0].dev_name}); %>
+<%- include("../includes/style.ejs"); %>
+
+<div class="container">
+    <h1><%= result[0].dev_name %></h1>
+
+    <ul>
+        <li>Number of Employees: <%= result[0].num_employees %></li>
+        <li>Rating: <%= result[0].rating %></li>
+        <li>Email: <%= result[0].email %></li>
+    </ul>
+</div>
+
+<%- include("../includes/footer.ejs"); %>

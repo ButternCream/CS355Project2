@@ -1,0 +1,17 @@
+<%- include("../includes/header.ejs", {title: "Developers"}); %>
+<%- include("../includes/style.ejs"); %>
+
+<div class="container">
+    <h1>Developers</h1>
+
+    <table border="1">
+        <th>Dev Name</th><th>Contact</th>
+        <% for(var i=0; result.length > i; i++ ) { %>
+        <tr>
+            <td><a href="/developer/?dev_name=<%= result[i].dev_name %>"><%= result[i].dev_name %></a></td>
+            <td><%= result[i].email %></td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+<%- include("../includes/footer.ejs"); %>

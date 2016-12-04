@@ -1,0 +1,36 @@
+<%- include("includes/header.ejs"); %>
+<%- include("includes/style.ejs"); %>
+
+<style type="text/css">
+    .container{
+        margin:20px;
+    }
+    .fade-in{
+        opacity:0.9;
+        width:110px;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+    }
+    .fade-in:hover{
+        opacity: 1;
+    }
+</style>
+
+<div class="container">
+    <h1><%= title %></h1>
+    <p> <%= description %></p>
+
+    <div class="btn-group" role="group">
+        <a href="/developer/all" class="btn btn-primary fade-in">Developers</a>
+        <a href="/game/all" class="btn btn-primary fade-in">Games</a>
+        <a href="/player/all" class="btn btn-primary fade-in">Players</a>
+        <a href="/server/all" class="btn btn-primary fade-in">Servers</a>
+    </div>
+
+</div>
+
+
+<%- include("includes/footer.ejs"); %>
