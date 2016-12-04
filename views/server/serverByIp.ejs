@@ -10,9 +10,6 @@
         <li>Game: <a href="/game/?dev_name=<%= result[0].dev_name_server + "&game_name=" + result[0].game_name_server %>"><%= result[0].game_name_server %></a></li>
         Players:
         <ul>
-
-
-
             <% for(var i=0; result.length > i; i++ ) { %>
             <li><a href="/player/?player_id=<%= result[i].player_ID %>"><%= result[i].username %></a></li>
             <% } %>
