@@ -35,7 +35,7 @@ router.get('/add', function(req, res){
             res.send(err);
         }
         else {
-            res.render('server/serverAdd', {'games': result});
+            res.render('server/serverAdd', {'games': result[0], 'dev': result[1]});
         }
     });
 });

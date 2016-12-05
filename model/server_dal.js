@@ -13,7 +13,7 @@ exports.getAll = function(callback){
 };
 
 exports.getGames = function(callback){
-    var query = 'SELECT game_name, dev_name FROM game;';
+    var query = 'CALL getGameInfo()';
     connection.query(query, function(err, result){
         callback(err, result);
     });
