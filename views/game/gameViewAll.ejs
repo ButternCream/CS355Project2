@@ -10,7 +10,7 @@
         <tr>
             <td><a href="/developer/?dev_name=<%= result[i].dev_name %>"><%= result[i].dev_name %></a></td>
             <td><a href="/game/?dev_name=<%= result[i].dev_name + "&game_name=" + result[i].game_name %>"><%= result[i].game_name %></a></td>
-            <td><%= result[i].rating %></td>
+            <td style="text-align: center;"><%= result[i].rating %></td>
         </tr>
         <% } %>
     </table>

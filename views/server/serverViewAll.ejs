@@ -5,12 +5,18 @@
     <h1>Servers</h1>
 
     <table border="1">
-        <th>Server Name</th><th>Status</th><th>Game</th>
+        <th>Server Name</th><th>Status</th><th>Game</th><th>Action</th>
         <% for(var i=0; result.length > i; i++ ) { %>
         <tr>
             <td><a href="/server/?server_ip=<%= result[i].server_IP %>"><%= result[i].server_name %></a></td>
             <td><%= result[i].server_status ? "Online" : "Offline" %></td>
             <td><a href="/game/?dev_name=<%= result[i].dev_name_server + "&game_name=" + result[i].game_name_server %>"><%= result[i].game_name_server %></a></td>
+            <td>
+            <form action="/server/delete/" style="float: right;">
+                <input type="hidden" name="server_ip" id="server_ip" value="<%= result[i].server_IP %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+            </td>
         </tr>
         <% } %>
     </table>
