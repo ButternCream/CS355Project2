@@ -4,14 +4,16 @@
 <div class="container">
     <h1><%= result[0].game_name_server %>: <%= result[0].server_name %></h1>
 
-    <ul>
-        <li>Server IP:Port: <b><%= result[0].server_IP + (result[0].Port_Number == null ? " - No Ports" :  ":" + result[0].Port_Number) %></b></li>
-        <li>Status: <%= result[0].server_status ? "Online" : "Offline" %></li>
-        <li>Game: <a href="/game/?dev_name=<%= result[0].dev_name_server + "&game_name=" + result[0].game_name_server %>"><%= result[0].game_name_server %></a></li>
-        Players:
-        <ul>
+    <ul class="list-group">
+        <li class="list-group-item">Server IP:Port: <b><%= result[0].server_IP + (result[0].Port_Number == null ? " - No Ports" :  ":" + result[0].Port_Number) %></b></li>
+        <li class="list-group-item">Status: <%= result[0].server_status ? "Online" : "Offline" %></li>
+        <li class="list-group-item">Game: <a href="/game/?dev_name=<%= result[0].dev_name_server + "&game_name=" + result[0].game_name_server %>"><%= result[0].game_name_server %></a></li>
+        <br />
+        <label for="players">Players:</label>
+        <ul class="list-group" id="players">
+
             <% for(var i=0; result.length > i; i++ ) { %>
-            <li><a href="/player/?player_id=<%= result[i].player_ID %>"><%= result[i].username %></a></li>
+            <li class="list-group-item"><a href="/player/?player_id=<%= result[i].player_ID %>"><%= result[i].username %></a></li>
             <% } %>
         </ul>
     </ul>
