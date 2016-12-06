@@ -22,7 +22,7 @@ router.get('/', function(req, res){
                 res.send(err);
             }
             else {
-                res.render('developer/developerByName', {'result': result});
+                res.render('developer/developerByName', {'result': result[0]});
             }
         });
     }

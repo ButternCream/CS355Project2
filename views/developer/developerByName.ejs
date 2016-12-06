@@ -8,6 +8,10 @@
         <li class="list-group-item">Number of Employees: <%= result[0].num_employees %></li>
         <li class="list-group-item">Rating: <%= result[0].rating %></li>
         <li class="list-group-item">Email: <%= result[0].email %></li>
+        <% if (result[0].state != null) { %>
+            <li class="list-group-item">State: <%= result[0].state %></li>
+            <li class="list-group-item">ZIP: <%= result[0].zip %></li>
+        <% } %>
     </ul>
 </div>
 

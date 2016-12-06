@@ -7,7 +7,13 @@
     <ul class="list-group">
         <li class="list-group-item">Username: <%= result[0].username %></li>
         <li class="list-group-item">Status: <%= result[0].player_status ? "Online" : "Offline" %></li>
-        <li class="list-group-item">In Game: <a href="/game/?dev_name=<%= result[0].Dev_Name + "&game_name=" + result[0].Game_Name %>"><%= result[0].Game_Name %></a></li>
+        <% if (result[0].Game_Name != null) { %>
+            <li class="list-group-item">In Game: <a href="/game/?dev_name=<%= result[0].Dev_Name + "&game_name=" + result[0].Game_Name %>"><%= result[0].Game_Name %></a></li>
+        <% } %>
+        <% if (result[0].state != null ) { %>
+            <li class="list-group-item">State: <%= result[0].state %></li>
+            <li class="list-group-item">Username: <%= result[0].zip %></li>
+        <% } %>
     </ul>
 </div>
 

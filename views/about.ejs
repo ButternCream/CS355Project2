@@ -1,8 +1,27 @@
 <%- include("includes/header.ejs", {title: "About"}); %>
 <%- include("includes/style.ejs"); %>
 
+<style type="text/css">
+    .trans-width{
+        width: 125px;
+        -webkit-transition: width 1s;
+        -moz-transition:  width 1s;
+        -ms-transition:  width 1s;
+        -o-transition:  width 1s;
+        transition:  width 1s;
+    }
+    .trans-width:hover{
+        width: 150px;
+        -webkit-transition: width 1s;
+        -moz-transition:  width 1s;
+        -ms-transition:  width 1s;
+        -o-transition:  width 1s;
+        transition:  width 1s;
+    }
+</style>
+
 <div class="container">
-    <h1 style="text-decoration: underline;">About</h1>
+    <h2 class="text-info">About</h2>
     <p class="text-muted">
         This purpose of this website is to be able to share details on hosted servers for people to join.
         People will be able to add games, players, and servers. If a game you are hosting isn't listed you can add it.
@@ -10,6 +29,15 @@
         You'll also be able to add a new server if you decide to host your own as well as delete old servers that are
         no longer running.
     </p>
+    <h5 class="text-info">
+       Contact: <a href="#">contact@support.com</a>
+    </h5>
+
+    <div class="btn-group btn-group-sm" role="group">
+        <a href="/diagram" class="btn btn-primary trans-width">ER Diagram</a>
+        <a href="/schema" class="btn btn-danger trans-width">Relational Schema</a>
+    </div>
+
 </div>
 
 <%- include("includes/footer.ejs"); %>

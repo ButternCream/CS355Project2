@@ -13,7 +13,7 @@ exports.getAll = function(callback){
 };
 
 exports.getByName = function(dev_name, callback){
-  var query = 'SELECT * FROM developer WHERE dev_name = ?';
+  var query = 'CALL devInfo(?)';
   var queryData = [dev_name];
   connection.query(query, queryData, function(err ,result){
      callback(err , result);
