@@ -1,6 +1,25 @@
 <%- include("../includes/header.ejs", {title: "Developers"}); %>
 <%- include("../includes/style.ejs"); %>
 
+<style type="text/css">
+    .fade{
+        opacity: 0.8;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+    }
+    .fade:hover{
+        opacity:1;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+    }
+</style>
+
 <div class="container">
     <h1>Developers</h1>
 
@@ -10,8 +29,16 @@
         <tr>
             <td><a href="/developer/?dev_name=<%= result[i].dev_name %>"><%= result[i].dev_name %></a></td>
             <td><%= result[i].email %></td>
+            <td>
+                <form action="/developer/delete/" style="float: right;">
+                    <input type="hidden" name="dev_name" id="dev_name" value="<%= result[i].dev_name %>" />
+                    <input class="btn-small btn-danger fade" type="submit" value="Delete"/>
+                </form>
+            </td>
         </tr>
         <% } %>
     </table>
+    <br/>
+    <a href="/developer/add" class="btn btn-primary fade">Add Developer</a>
 </div>
 <%- include("../includes/footer.ejs"); %>

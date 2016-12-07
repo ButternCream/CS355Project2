@@ -20,6 +20,12 @@ exports.getByName = function(dev_name, game_name, callback){
     });
 };
 
+exports.getDevs = function(callback){
+  var query = 'CALL getGameInfo()';
+  connection.query(query, function (err, result) {
+     callback(err, result);
+  });
+};
 
 exports.insert = function(params, callback){
     var query = 'INSERT INTO game (dev_name, game_name, game_type, num_players, version, rating) VALUES (?,?,?,?,?,?)';

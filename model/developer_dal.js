@@ -20,3 +20,20 @@ exports.getByName = function(dev_name, callback){
   });
 };
 
+exports.insert = function(params, callback){
+    var query = 'INSERT INTO developer (dev_name, num_employees, rating, email) VALUES (?,?,?,?)';
+    var queryData = [params.dev_name, params.num_employees, params.rating, params.email];
+    connection.query(query,queryData,function(err, result){
+        callback(err, result);
+    });
+};
+
+exports.delete = function(dev_name, callback) {
+    var query = 'DELETE FROM developer WHERE dev_name = ?';
+    var queryData = [dev_name];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+
+};

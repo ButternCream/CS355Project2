@@ -86,4 +86,23 @@ router.get('/delete', function(req, res){
     }
 });
 
+router.get('/update', function(req, res){
+    if(req.query.server_ip == null) {
+        res.send('server_ip is null');
+    }
+    else if(req.query.server_status == null) {
+        res.send('server_status is null');
+    }
+    else {
+        server_dal.update(req.query, function(err, result){
+            if(err) {
+                res.send(err);
+            }
+            else {
+                //poor practice, but we will handle it differently once we start using Ajax
+                res.redirect(302, '/server/all');
+            }
+        });
+    }
+});
 module.exports = router;

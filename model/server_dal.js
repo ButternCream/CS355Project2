@@ -44,3 +44,13 @@ exports.delete = function(server_ip, callback) {
     });
 
 };
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE game_server SET server_status = ? WHERE server_IP = ?';
+    var queryData = [params.server_status, params.server_ip];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+
+};

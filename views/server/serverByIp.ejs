@@ -8,6 +8,10 @@
         <li class="list-group-item">Server IP:Port: <b><%= result[0].server_IP + (result[0].Port_Number == null ? " - No Ports" :  ":" + result[0].Port_Number) %></b></li>
         <li class="list-group-item">Status: <%= result[0].server_status ? "Online" : "Offline" %></li>
         <li class="list-group-item">Game: <a href="/game/?dev_name=<%= result[0].dev_name_server + "&game_name=" + result[0].game_name_server %>"><%= result[0].game_name_server %></a></li>
+        <% if (result[0].zip != null ) { %>
+            <li class="list-group-item">State: <%= result[0].state %></li>
+            <li class="list-group-item">ZIP: <%= result[0].zip %></li>
+        <% } %>
         <br />
         <label for="players">Players:</label>
         <ul class="list-group" id="players">

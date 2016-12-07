@@ -1,0 +1,29 @@
+<%- include("../includes/header.ejs", {title: "Add New Developer"}); %>
+<%- include("../includes/style.ejs"); %>
+<div class="container">
+
+    <h1>Add New Developer</h1>
+    <form action="/developer/insert" method="get" class="col-xs-4">
+        <div class="form-group">
+            <label for="dev_name">Name:</label> <input class="form-control" id="dev_name" name="dev_name" type="text" />
+        </div>
+
+        <div class="form-group">
+            <label for="num_employees">Number of Employees:</label> <input class="form-control" id="num_employees" name="num_employees" type="number" />
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating:</label> <input class="form-control" id="rating" name="rating" type="number" min="1" max="5"/>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label> <input class="form-control" id="email" name="email" type="email" />
+        </div>
+
+        <br/>
+        <input class="btn btn-success" type="submit" />
+
+    </form>
+
+</div>
+<%- include("../includes/footer.ejs"); %>

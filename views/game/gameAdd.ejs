@@ -1,0 +1,42 @@
+<%- include("../includes/header.ejs", {title: "Add New Game"}); %>
+<%- include("../includes/style.ejs"); %>
+<div class="container">
+
+    <h1>Add New Game</h1>
+    <form action="/game/insert" method="get" class="col-xs-4">
+        <div class="form-group">
+            <label for="dev_name">Developer:</label>
+            <select class="form-control" id="dev_name" name="dev_name">
+                <% for(var i=0; dev.length > i; i++ ) { %>
+                <option value="<%= dev[i].dev_name %>"><%= dev[i].dev_name %></option>
+                <% } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="game_name">Name:</label> <input class="form-control" id="game_name" name="game_name" type="text" />
+        </div>
+
+        <div class="form-group">
+            <label for="game_type">Game Type:</label> <input class="form-control" id="game_type" name="game_type" type="text" />
+        </div>
+
+        <div class="form-group">
+            <label for="num_players">Number of Players:</label> <input class="form-control" id="num_players" name="num_players" type="number" />
+        </div>
+
+        <div class="form-group">
+            <label for="version">Version:</label> <input class="form-control" id="version" name="version" type="number" />
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating:</label> <input class="form-control" id="rating" name="rating" type="number" min="1" max="5"/>
+        </div>
+
+        <br/>
+        <input class="btn btn-success" type="submit" />
+
+    </form>
+
+</div>
+<%- include("../includes/footer.ejs"); %>
