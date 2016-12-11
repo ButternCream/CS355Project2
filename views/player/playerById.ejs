@@ -1,6 +1,12 @@
 <%- include("../includes/header.ejs", {title: result[0].username}); %>
 <%- include("../includes/style.ejs"); %>
 
+<style type="text/css">
+    .list-group-item:hover{
+        background-color: #FFFFDD;
+    }
+</style>
+
 <div class="container">
     <h1><%= result[0].username %></h1>
 

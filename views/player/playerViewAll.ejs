@@ -1,5 +1,23 @@
 <%- include("../includes/header.ejs", {title: "Players"}); %>
 <%- include("../includes/style.ejs"); %>
+<style type="text/css">
+    .fade{
+        opacity: 0.8;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+    }
+    .fade:hover{
+        opacity:1;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+    }
+</style>
 
 <div class="container">
     <h1>Players</h1>
@@ -10,8 +28,29 @@
         <tr>
             <td><a href="/player/?player_id=<%= result[i].player_ID %>"><%= result[i].username %></a></td>
             <td><%= result[i].player_status ? "Online" : "Offline" %></td>
+            <td>
+                <form action="/player/delete/" style="float: right;">
+                    <input type="hidden" name="player_id" id="player_id" value="<%= result[i].player_ID %>" />
+                    <input class="btn-small btn-danger fade" type="submit" value="Delete"/>
+                </form>
+            </td>
+            <td style="float: left;">
+                <form action="/player/update/" style="float: right;">
+                    <input type="hidden" name="player_id" id="player_id" value="<%= result[i].player_ID %>" />
+                    <% if (result[i].player_status) { %>
+                    <input type="hidden" name="player_status" id="player_status" value="0" />
+                    <input class="btn-small btn-danger fade" type="submit" value="Sign Out"/>
+                    <% } else { %>
+                    <input type="hidden" name="player_status" id="player_status" value="1" />
+                    <input class="btn-small btn-success fade" type="submit" value="Sign In" />
+                    <% } %>
+                </form>
+            </td>
         </tr>
+
         <% } %>
     </table>
+    <br />
+    <a href="/player/add" class="btn btn-primary fade">Add Player</a>
 </div>
 <%- include("../includes/footer.ejs"); %>

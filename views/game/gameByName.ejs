@@ -1,6 +1,12 @@
 <%- include("../includes/header.ejs", {title: result[0].game_name}); %>
 <%- include("../includes/style.ejs"); %>
 
+<style type="text/css">
+    .list-group-item:hover{
+        background-color: #FFFFDD;
+    }
+</style>
+
 <div class="container">
     <h1><%= result[0].game_name %></h1>
 
@@ -11,6 +17,8 @@
         <li class="list-group-item">Version: <%= result[0].version %></li>
         <li class="list-group-item">Rating: <%= result[0].rating %></li>
     </ul>
+    <a onclick="event.preventDefault();window.location.href='/game/edit/?dev_name=<%= result[0].dev_name %>&game_name=<%= result[0].game_name %>'" class="btn btn-primary">Edit</a>
+
 </div>
 
 <%- include("../includes/footer.ejs"); %>

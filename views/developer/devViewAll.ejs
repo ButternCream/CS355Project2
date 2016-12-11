@@ -30,6 +30,9 @@
             <td><a href="/developer/?dev_name=<%= result[i].dev_name %>"><%= result[i].dev_name %></a></td>
             <td><%= result[i].email %></td>
             <td>
+                <a onclick="event.preventDefault();window.location.href='/developer/edit/?dev_name=<%= result[i].dev_name %>'" class="btn btn-success fade">Rate</a>
+            </td>
+            <td>
                 <form action="/developer/delete/" style="float: right;">
                     <input type="hidden" name="dev_name" id="dev_name" value="<%= result[i].dev_name %>" />
                     <input class="btn-small btn-danger fade" type="submit" value="Delete"/>

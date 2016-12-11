@@ -1,6 +1,12 @@
 <%- include("../includes/header.ejs", {title: result[0].server_name}); %>
 <%- include("../includes/style.ejs"); %>
 
+<style type="text/css">
+    .list-group-item:hover{
+        background-color: #FFFFDD;
+    }
+</style>
+
 <div class="container">
     <h1><%= result[0].game_name_server %>: <%= result[0].server_name %></h1>
 

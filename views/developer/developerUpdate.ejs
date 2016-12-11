@@ -1,0 +1,21 @@
+<%- include("../includes/header.ejs", {title: "Update " + dev[0].dev_name}); %>
+<%- include("../includes/style.ejs"); %>
+<div class="container">
+
+    <h1>Rate <%= dev[0].dev_name %></h1>
+    <form action="/developer/update" method="get" class="col-xs-4">
+        <div class="form-group">
+            <input class="form-control" id="dev_name" name="dev_name" type="hidden" value="<%= dev[0].dev_name %>" />
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating:</label> <input class="form-control" id="rating" name="rating" type="number" min="1" max="5" value="<%= dev[0].rating %>"/>
+        </div>
+
+        <br/>
+        <input class="btn btn-success" type="submit" />
+
+    </form>
+
+</div>
+<%- include("../includes/footer.ejs"); %>

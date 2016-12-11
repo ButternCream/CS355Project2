@@ -92,4 +92,26 @@ router.get('/delete', function(req, res){
     }
 });
 
+router.get('/edit', function(req, res){
+    if(req.query.dev_name == null) {
+        res.send('A dev name is required');
+    }
+    if(req.query.game_name == null) {
+        res.send('A game name is required');
+    }
+    else {
+        game_dal.getByName(req.query.dev_name, req.query.game_name, function(err, result){
+            //console.log(result);
+            res.render('game/gameUpdate', {'game': result[0]});
+        });
+    }
+
+});
+
+router.get('/update', function(req, res) {
+    game_dal.update(req.query, function(err, result){
+        res.redirect(302, '/game/all');
+    });
+});
+
 module.exports = router;

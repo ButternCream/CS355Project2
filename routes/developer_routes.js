@@ -84,4 +84,23 @@ router.get('/delete', function(req, res){
     }
 });
 
+router.get('/edit', function(req, res){
+    if(req.query.dev_name == null) {
+        res.send('A dev name is required');
+    }
+    else {
+        developer_dal.getByName(req.query.dev_name, function(err, result){
+            //console.log(result);
+            res.render('developer/developerUpdate', {'dev': result[0]});
+        });
+    }
+
+});
+
+router.get('/update', function(req, res) {
+    developer_dal.update(req.query, function(err, result){
+        res.redirect(302, '/developer/all');
+    });
+});
+
 module.exports = router;

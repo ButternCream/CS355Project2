@@ -37,3 +37,13 @@ exports.delete = function(dev_name, callback) {
     });
 
 };
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE developer SET rating = ? WHERE dev_name = ?';
+    var queryData = [params.rating, params.dev_name];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+
+};

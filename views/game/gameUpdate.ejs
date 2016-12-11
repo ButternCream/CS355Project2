@@ -1,0 +1,34 @@
+<%- include("../includes/header.ejs", {title: "Update " + game.game_name}); %>
+<%- include("../includes/style.ejs"); %>
+<div class="container">
+
+    <h1>Update <%= game.game_name %></h1>
+    <form action="/game/update" method="get" class="col-xs-4">
+        <div class="form-group">
+            <input type="hidden" id="game_name" name="game_name" value="<%= game.game_name %>" />
+            <input type="hidden" id="dev_name" name="dev_name" value="<%= game.dev_name %>" />
+        </div>
+
+        <div class="form-group">
+            <label for="game_type">Game Type:</label> <input class="form-control" id="game_type" name="game_type" type="text" value="<%= game.game_type %>"/>
+        </div>
+
+        <div class="form-group">
+            <label for="num_players">Number of Players:</label> <input class="form-control" id="num_players" name="num_players" type="number" value="<%= game.num_players %>"/>
+        </div>
+
+        <div class="form-group">
+            <label for="version">Version:</label> <input class="form-control" id="version" name="version" type="number" step="0.01" value="<%= game.version %>"/>
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating:</label> <input class="form-control" id="rating" name="rating" type="number" min="1" max="5" value="<%= game.rating %>"/>
+        </div>
+
+        <br/>
+        <input class="btn btn-success" type="submit" />
+
+    </form>
+
+</div>
+<%- include("../includes/footer.ejs"); %>

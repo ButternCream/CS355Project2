@@ -1,6 +1,12 @@
 <%- include("../includes/header.ejs", {title: result[0].dev_name}); %>
 <%- include("../includes/style.ejs"); %>
 
+<style type="text/css">
+    .list-group-item:hover{
+        background-color: #FFFFDD;
+    }
+</style>
+
 <div class="container">
     <h1><%= result[0].dev_name %></h1>
 
@@ -13,6 +19,7 @@
             <li class="list-group-item">ZIP: <%= result[0].zip %></li>
         <% } %>
     </ul>
+    <a onclick="event.preventDefault();window.location.href='/developer/edit/?dev_name=<%= result[0].dev_name %>'" class="btn btn-primary">Rate</a>
 </div>
 
 <%- include("../includes/footer.ejs"); %>

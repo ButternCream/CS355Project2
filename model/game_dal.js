@@ -44,3 +44,12 @@ exports.delete = function(game_name, dev_name, callback) {
     });
 
 };
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE game SET game_type = ?, num_players = ?, version = ?, rating = ? WHERE dev_name = ? AND game_name = ?';
+    var queryData = [params.game_type, params.num_players, params.version, params.rating, params.dev_name, params.game_name];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
